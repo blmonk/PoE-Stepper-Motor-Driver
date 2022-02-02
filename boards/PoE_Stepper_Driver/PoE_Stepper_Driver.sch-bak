@@ -1,0 +1,61 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ECE445:LT4293 U?
+U 1 1 61FB857D
+P 3625 3100
+F 0 "U?" H 3625 3565 50  0000 C CNN
+F 1 "LT4293" H 3625 3474 50  0000 C CNN
+F 2 "" H 3475 3550 50  0001 C CNN
+F 3 "" H 3475 3550 50  0001 C CNN
+	1    3625 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECE445:LT4321 U?
+U 1 1 61FBDFD6
+P 6825 2875
+F 0 "U?" H 6825 3656 50  0000 C CNN
+F 1 "LT4321" H 6825 3565 50  0000 C CNN
+F 2 "" H 6475 3425 50  0001 C CNN
+F 3 "" H 6475 3425 50  0001 C CNN
+	1    6825 2875
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 61FBE38F
+P 8050 2875
+F 0 "R?" H 8120 2921 50  0000 L CNN
+F 1 "R" H 8120 2830 50  0000 L CNN
+F 2 "" V 7980 2875 50  0001 C CNN
+F 3 "~" H 8050 2875 50  0001 C CNN
+	1    8050 2875
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:C_Small C?
+U 1 1 61FBE7CA
+P 8500 2900
+F 0 "C?" H 8592 2991 50  0000 L CNN
+F 1 "0.047uF" H 8592 2900 50  0000 L CNN
+F 2 "" H 8500 2900 50  0001 C CNN
+F 3 "~" H 8500 2900 50  0001 C CNN
+F 4 "100V" H 8592 2809 50  0000 L CNN "Voltage"
+	1    8500 2900
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

@@ -1,4 +1,80 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 30 0
 EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ECE445:LT4293 U?
+U 1 1 61FB857D
+P 3625 3100
+F 0 "U?" H 3625 3565 50  0000 C CNN
+F 1 "LT4293" H 3625 3474 50  0000 C CNN
+F 2 "" H 3475 3550 50  0001 C CNN
+F 3 "" H 3475 3550 50  0001 C CNN
+	1    3625 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECE445:LT4321 U?
+U 1 1 61FBDFD6
+P 6825 2875
+F 0 "U?" H 6825 3656 50  0000 C CNN
+F 1 "LT4321" H 6825 3565 50  0000 C CNN
+F 2 "" H 6475 3425 50  0001 C CNN
+F 3 "" H 6475 3425 50  0001 C CNN
+	1    6825 2875
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:C_Small C?
+U 1 1 61FBE7CA
+P 8200 2775
+F 0 "C?" H 8292 2866 50  0000 L CNN
+F 1 "0.047uF" H 8292 2775 50  0000 L CNN
+F 2 "" H 8200 2775 50  0001 C CNN
+F 3 "~" H 8200 2775 50  0001 C CNN
+F 4 "100V" H 8292 2684 50  0000 L CNN "Voltage"
+	1    8200 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 2625 8200 2675
+Wire Wire Line
+	8200 2925 8200 2875
+$Comp
+L device:R_Small R?
+U 1 1 61FC1A67
+P 7875 2775
+F 0 "R?" H 7934 2821 50  0000 L CNN
+F 1 "0" H 7934 2730 50  0000 L CNN
+F 2 "" H 7875 2775 50  0001 C CNN
+F 3 "~" H 7875 2775 50  0001 C CNN
+	1    7875 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7875 2625 7875 2675
+Wire Wire Line
+	7875 2625 8200 2625
+Wire Wire Line
+	7875 2875 7875 2925
+Wire Wire Line
+	7875 2925 7425 2925
+Wire Wire Line
+	7425 2725 7600 2725
+Wire Wire Line
+	7600 2725 7600 2625
+Wire Wire Line
+	7600 2625 7875 2625
+Connection ~ 7875 2625
 $EndSCHEMATC
