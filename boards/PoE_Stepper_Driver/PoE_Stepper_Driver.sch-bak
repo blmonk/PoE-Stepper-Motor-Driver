@@ -156,14 +156,14 @@ Connection ~ 7100 3650
 Wire Wire Line
 	7100 3650 7725 3650
 Connection ~ 7100 3800
-Text Label 8175 3250 0    50   ~ 0
+Text Label 8250 3250 0    50   ~ 0
 VPORTP
-Text Label 8175 3650 0    50   ~ 0
+Wire Wire Line
+	7725 3250 8250 3250
+Connection ~ 7725 3250
+Text Label 8250 3650 0    50   ~ 0
 VPORTN
 Wire Wire Line
-	7725 3250 8175 3250
-Connection ~ 7725 3250
-Wire Wire Line
-	7725 3650 8175 3650
+	7725 3650 8250 3650
 Connection ~ 7725 3650
 $EndSCHEMATC

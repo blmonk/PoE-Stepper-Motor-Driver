@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ECE445)(type Legacy)(uri ${KIPRJMOD}/ECE445.lib)(options "")(descr ""))
+)
