@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -13,157 +13,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L ECE445:LT4293 U?
-U 1 1 61FB857D
-P 3625 3100
-F 0 "U?" H 3625 3565 50  0000 C CNN
-F 1 "LT4293" H 3625 3474 50  0000 C CNN
-F 2 "" H 3475 3550 50  0001 C CNN
-F 3 "" H 3475 3550 50  0001 C CNN
-	1    3625 3100
-	1    0    0    -1  
-$EndComp
-$Comp
-L ECE445:LT4321 U?
-U 1 1 61FBDFD6
-P 6350 3500
-F 0 "U?" H 5900 4150 50  0000 C CNN
-F 1 "LT4321" H 5925 4050 50  0000 C CNN
-F 2 "" H 6000 4050 50  0001 C CNN
-F 3 "" H 6000 4050 50  0001 C CNN
-	1    6350 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L device:C_Small C?
-U 1 1 61FBE7CA
-P 7725 3400
-F 0 "C?" H 7817 3491 50  0000 L CNN
-F 1 "0.047uF" H 7817 3400 50  0000 L CNN
-F 2 "" H 7725 3400 50  0001 C CNN
-F 3 "~" H 7725 3400 50  0001 C CNN
-F 4 "100V" H 7817 3309 50  0000 L CNN "Voltage"
-	1    7725 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7725 3250 7725 3300
-$Comp
-L device:R_Small R?
-U 1 1 61FC1A67
-P 7400 3400
-F 0 "R?" H 7459 3446 50  0000 L CNN
-F 1 "0" H 7459 3355 50  0000 L CNN
-F 2 "" H 7400 3400 50  0001 C CNN
-F 3 "~" H 7400 3400 50  0001 C CNN
-	1    7400 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7400 3250 7400 3300
-Wire Wire Line
-	7400 3250 7725 3250
-Wire Wire Line
-	7400 3500 7400 3550
-Wire Wire Line
-	7400 3550 6950 3550
-Wire Wire Line
-	6950 3650 7100 3650
-Wire Wire Line
-	7725 3500 7725 3650
-Text GLabel 7250 3025 2    50   Input ~ 0
-PWRGD
-Wire Wire Line
-	6950 3450 7075 3450
-Wire Wire Line
-	7075 3450 7075 3025
-Wire Wire Line
-	7075 3025 7250 3025
-Wire Wire Line
-	7175 3350 7175 3250
-Wire Wire Line
-	7175 3250 7400 3250
-Wire Wire Line
-	6950 3350 7175 3350
-Connection ~ 7400 3250
-Text Label 6500 2825 1    50   ~ 0
-BG36
-Wire Wire Line
-	6500 2825 6500 2900
-Text Label 6400 2825 1    50   ~ 0
-BG12
-Wire Wire Line
-	6400 2825 6400 2900
-Text Label 6300 2825 1    50   ~ 0
-POE_CT12
-Wire Wire Line
-	6300 2825 6300 2900
-Text Label 6200 2825 1    50   ~ 0
-TG12
-Wire Wire Line
-	6200 2825 6200 2900
-Text Label 5675 3350 2    50   ~ 0
-TG36
-Wire Wire Line
-	5675 3350 5750 3350
-Text Label 5675 3450 2    50   ~ 0
-POE_CT36
-Wire Wire Line
-	5675 3450 5750 3450
-Text Label 5675 3550 2    50   ~ 0
-POE_CT45
-Wire Wire Line
-	5675 3550 5750 3550
-Text Label 5675 3650 2    50   ~ 0
-TG45
-Wire Wire Line
-	5675 3650 5750 3650
-Text Label 6200 4175 3    50   ~ 0
-TG78
-Wire Wire Line
-	6200 4175 6200 4100
-Text Label 6300 4175 3    50   ~ 0
-POE_CT78
-Wire Wire Line
-	6300 4175 6300 4100
-Text Label 6400 4175 3    50   ~ 0
-BG78
-Wire Wire Line
-	6400 4175 6400 4100
-Text Label 6500 4175 3    50   ~ 0
-BG45
-Wire Wire Line
-	6500 4175 6500 4100
-$Comp
-L power:GND #PWR?
-U 1 1 61FC94D9
-P 7100 3825
-F 0 "#PWR?" H 7100 3575 50  0001 C CNN
-F 1 "GND" H 7105 3652 50  0000 C CNN
-F 2 "" H 7100 3825 50  0001 C CNN
-F 3 "" H 7100 3825 50  0001 C CNN
-	1    7100 3825
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6950 3800 7100 3800
-Wire Wire Line
-	7100 3800 7100 3825
-Wire Wire Line
-	7100 3650 7100 3800
-Connection ~ 7100 3650
-Wire Wire Line
-	7100 3650 7725 3650
-Connection ~ 7100 3800
-Text Label 8175 3250 0    50   ~ 0
-VPORTP
-Text Label 8175 3650 0    50   ~ 0
-VPORTN
-Wire Wire Line
-	7725 3250 8175 3250
-Connection ~ 7725 3250
-Wire Wire Line
-	7725 3650 8175 3650
-Connection ~ 7725 3650
+$Sheet
+S 12050 950  1025 400 
+U 620ECB3C
+F0 "Ethernet" 50
+F1 "Ethernet.sch" 50
+$EndSheet
 $EndSCHEMATC
