@@ -1,0 +1,171 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L TMC429-I:TMC429-I U?
+U 1 1 6293383B
+P 2000 2725
+F 0 "U?" H 3025 3025 60  0000 C CNN
+F 1 "TMC429-I" H 3025 2925 60  0000 C CNN
+F 2 "SSOP16_150MIL_TRI" H 3200 2965 60  0001 C CNN
+F 3 "" H 2000 2725 60  0000 C CNN
+	1    2000 2725
+	1    0    0    -1  
+$EndComp
+$Comp
+L TMC2660C-PA:TMC2660C-PA U?
+U 1 1 62935731
+P 5500 2375
+F 0 "U?" H 6500 2662 60  0000 C CNN
+F 1 "TMC2660C-PA" H 6500 2556 60  0000 C CNN
+F 2 "QFP_2660C-PA_TRI" H 6500 2615 60  0001 C CNN
+F 3 "" H 5500 2375 60  0000 C CNN
+	1    5500 2375
+	1    0    0    -1  
+$EndComp
+Text GLabel 1875 3625 0    50   Input ~ 0
+SPI1_SCK
+$Comp
+L power:GND #PWR?
+U 1 1 62939459
+P 4050 3500
+F 0 "#PWR?" H 4050 3250 50  0001 C CNN
+F 1 "GND" H 4055 3327 50  0000 C CNN
+F 2 "" H 4050 3500 50  0001 C CNN
+F 3 "" H 4050 3500 50  0001 C CNN
+	1    4050 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3425 4050 3425
+Wire Wire Line
+	4050 3425 4050 3500
+$Comp
+L power:GND #PWR?
+U 1 1 6293B082
+P 7750 2400
+F 0 "#PWR?" H 7750 2150 50  0001 C CNN
+F 1 "GND" H 7755 2227 50  0000 C CNN
+F 2 "" H 7750 2400 50  0001 C CNN
+F 3 "" H 7750 2400 50  0001 C CNN
+	1    7750 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 2375 7750 2375
+Wire Wire Line
+	7750 2375 7750 2400
+$Comp
+L Connector:Conn_01x04_Male J?
+U 1 1 62931FC4
+P 9300 3750
+AR Path="/6292FF7A/62931FC4" Ref="J?"  Part="1" 
+AR Path="/6293177D/62931FC4" Ref="J?"  Part="1" 
+F 0 "J?" H 9272 3632 50  0000 R CNN
+F 1 "Motor" H 9272 3723 50  0000 R CNN
+F 2 "" H 9300 3750 50  0001 C CNN
+F 3 "~" H 9300 3750 50  0001 C CNN
+	1    9300 3750
+	-1   0    0    1   
+$EndComp
+Text Label 8975 3550 2    50   ~ 0
+OA1
+Text Label 7525 4425 0    50   ~ 0
+OB2
+Wire Wire Line
+	7500 4375 7500 4425
+Wire Wire Line
+	7525 4425 7500 4425
+Connection ~ 7500 4425
+Wire Wire Line
+	7500 4425 7500 4475
+Text Label 7525 4125 0    50   ~ 0
+OB1
+Wire Wire Line
+	7500 4075 7500 4125
+Wire Wire Line
+	7500 4125 7525 4125
+Connection ~ 7500 4125
+Wire Wire Line
+	7500 4125 7500 4175
+Text Label 7525 3625 0    50   ~ 0
+OB1
+Wire Wire Line
+	7500 3575 7500 3625
+Wire Wire Line
+	7500 3625 7525 3625
+Connection ~ 7500 3625
+Wire Wire Line
+	7500 3625 7500 3675
+Text Label 5475 2525 2    50   ~ 0
+OA1
+Wire Wire Line
+	5500 2475 5500 2525
+Wire Wire Line
+	5500 2525 5475 2525
+Connection ~ 5500 2525
+Wire Wire Line
+	5500 2525 5500 2575
+Text Label 5475 2825 2    50   ~ 0
+OA2
+Text Label 5475 3325 2    50   ~ 0
+OA2
+Wire Wire Line
+	5500 3275 5500 3325
+Wire Wire Line
+	5500 3325 5475 3325
+Connection ~ 5500 3325
+Wire Wire Line
+	5500 3325 5500 3375
+Text Label 7525 3925 0    50   ~ 0
+OB2
+Wire Wire Line
+	7500 3875 7500 3925
+Wire Wire Line
+	7500 3925 7525 3925
+Connection ~ 7500 3925
+Wire Wire Line
+	7500 3925 7500 3975
+Wire Wire Line
+	5500 2775 5500 2825
+Wire Wire Line
+	5500 2825 5475 2825
+Connection ~ 5500 2825
+Wire Wire Line
+	5500 2825 5500 2875
+Text Label 5475 3025 2    50   ~ 0
+OA1
+Wire Wire Line
+	5500 2975 5500 3025
+Wire Wire Line
+	5500 3025 5475 3025
+Connection ~ 5500 3025
+Wire Wire Line
+	5500 3025 5500 3075
+Text Label 8975 3850 2    50   ~ 0
+OB2
+Text Label 8975 3750 2    50   ~ 0
+OB1
+Text Label 8975 3650 2    50   ~ 0
+OA2
+Wire Wire Line
+	8975 3550 9100 3550
+Wire Wire Line
+	8975 3650 9100 3650
+Wire Wire Line
+	8975 3750 9100 3750
+Wire Wire Line
+	8975 3850 9100 3850
+$EndSCHEMATC
