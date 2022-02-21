@@ -1323,4 +1323,6 @@ Text Notes 7400 3600 0    50   ~ 0
 PD Controller
 Text Notes 4250 6150 0    50   ~ 0
 Diode Bridge
+Text Notes 1100 4025 0    50   ~ 0
+PHY
 $EndSCHEMATC
