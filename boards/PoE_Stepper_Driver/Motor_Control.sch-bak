@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 3
-Title ""
-Date ""
-Rev ""
+Title "PoE Stepper Driver"
+Date "2022-02-22"
+Rev "1.0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -358,7 +358,7 @@ Wire Wire Line
 Wire Wire Line
 	9625 3925 9625 4100
 Wire Wire Line
-	9625 4100 9775 4100
+	9625 4100 10125 4100
 Connection ~ 9525 3925
 Wire Wire Line
 	9525 3925 9525 3975
@@ -367,7 +367,7 @@ Wire Wire Line
 Wire Wire Line
 	9625 4325 9625 4200
 Wire Wire Line
-	9625 4200 9775 4200
+	9625 4200 10125 4200
 Connection ~ 9525 4325
 Wire Wire Line
 	9525 4325 9525 4375
@@ -376,7 +376,7 @@ Wire Wire Line
 Wire Wire Line
 	9725 3525 9725 4000
 Wire Wire Line
-	9725 4000 9775 4000
+	9725 4000 10125 4000
 Connection ~ 9525 3525
 Wire Wire Line
 	9525 3525 9525 3475
@@ -385,21 +385,21 @@ Wire Wire Line
 Wire Wire Line
 	9725 4725 9725 4300
 Wire Wire Line
-	9725 4300 9775 4300
+	9725 4300 10125 4300
 Connection ~ 9525 4725
 Wire Wire Line
 	9525 4725 9525 4775
 $Comp
 L Connector:Conn_01x04_Male J?
 U 1 1 62931FC4
-P 9975 4100
+P 10325 4100
 AR Path="/6292FF7A/62931FC4" Ref="J?"  Part="1" 
 AR Path="/6293177D/62931FC4" Ref="J2"  Part="1" 
-F 0 "J2" H 9947 3982 50  0000 R CNN
-F 1 "Motor" H 9947 4073 50  0000 R CNN
-F 2 "" H 9975 4100 50  0001 C CNN
-F 3 "~" H 9975 4100 50  0001 C CNN
-	1    9975 4100
+F 0 "J2" H 10297 3982 50  0000 R CNN
+F 1 "Motor" H 10297 4073 50  0000 R CNN
+F 2 "" H 10325 4100 50  0001 C CNN
+F 3 "~" H 10325 4100 50  0001 C CNN
+	1    10325 4100
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
