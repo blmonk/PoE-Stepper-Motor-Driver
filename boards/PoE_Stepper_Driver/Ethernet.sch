@@ -135,27 +135,13 @@ Text Label 7025 2250 3    50   ~ 0
 BG45
 Wire Wire Line
 	7025 2250 7025 2175
-$Comp
-L power:GND #PWR04
-U 1 1 620EF51F
-P 7625 1900
-F 0 "#PWR04" H 7625 1650 50  0001 C CNN
-F 1 "GND" H 7630 1727 50  0000 C CNN
-F 2 "" H 7625 1900 50  0001 C CNN
-F 3 "" H 7625 1900 50  0001 C CNN
-	1    7625 1900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7475 1875 7625 1875
-Wire Wire Line
-	7625 1875 7625 1900
 Wire Wire Line
 	7625 1725 7625 1875
 Connection ~ 7625 1725
 Wire Wire Line
 	7625 1725 8250 1725
-Connection ~ 7625 1875
 Text Label 8600 1325 0    50   ~ 0
 VPORTP
 Text Label 8600 1725 0    50   ~ 0
