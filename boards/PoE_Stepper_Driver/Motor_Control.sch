@@ -760,7 +760,7 @@ Connection ~ 9250 2500
 Wire Wire Line
 	8500 2500 8500 2550
 Wire Wire Line
-	8600 1625 8600 2550
+	8600 1625 8600 1750
 Wire Wire Line
 	8700 1925 8700 2550
 Wire Wire Line
@@ -820,4 +820,37 @@ Wire Wire Line
 	1375 3650 1425 3650
 Wire Wire Line
 	1425 3650 1425 3375
+$Comp
+L device:C_Small C?
+U 1 1 623A88DB
+P 8275 1750
+AR Path="/623A88DB" Ref="C?"  Part="1" 
+AR Path="/6293177D/623A88DB" Ref="C2"  Part="1" 
+F 0 "C2" V 8475 1775 50  0000 L CNN
+F 1 "0.1uF" V 8375 1650 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8275 1750 50  0001 C CNN
+F 3 "~" H 8275 1750 50  0001 C CNN
+	1    8275 1750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8375 1750 8600 1750
+Connection ~ 8600 1750
+Wire Wire Line
+	8600 1750 8600 2550
+$Comp
+L power:GND #PWR04
+U 1 1 623B63E5
+P 8125 1775
+F 0 "#PWR04" H 8125 1525 50  0001 C CNN
+F 1 "GND" H 8130 1602 50  0000 C CNN
+F 2 "" H 8125 1775 50  0001 C CNN
+F 3 "" H 8125 1775 50  0001 C CNN
+	1    8125 1775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8175 1750 8125 1750
+Wire Wire Line
+	8125 1750 8125 1775
 $EndSCHEMATC
