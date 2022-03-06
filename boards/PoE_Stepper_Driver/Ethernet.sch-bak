@@ -334,8 +334,6 @@ Wire Wire Line
 Wire Wire Line
 	2700 2300 3625 2300
 Wire Wire Line
-	2050 1575 3000 1575
-Wire Wire Line
 	3000 1575 3000 1900
 Wire Wire Line
 	3000 1900 3625 1900
@@ -1237,17 +1235,6 @@ Text Label 7725 3925 2    50   ~ 0
 RX+
 Text Label 7725 3725 2    50   ~ 0
 RX-
-$Comp
-L Connector:RJ45_LED_Shielded J1
-U 1 1 6362A82D
-P 1650 1575
-F 0 "J1" H 1375 975 50  0000 C CNN
-F 1 "RJ45" H 1350 1100 50  0000 C CNN
-F 2 "Connector_RJ:RJ45_Amphenol_RJMG1BD3B8K1ANR" V 1650 1600 50  0001 C CNN
-F 3 "~" V 1650 1600 50  0001 C CNN
-	1    1650 1575
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	1650 850  1650 1075
 Wire Wire Line
@@ -2116,5 +2103,18 @@ F 2 "Package_TO_SOT_SMD:LFPAK33" H 4355 4490 50  0001 C CNN
 F 3 "" H 4355 4490 50  0001 C CNN
 	1    4425 4150
 	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2050 1575 3000 1575
+$Comp
+L Connector:RJ45_LED_Shielded J1
+U 1 1 6362A82D
+P 1650 1575
+F 0 "J1" H 1375 975 50  0000 C CNN
+F 1 "RJ45" H 1350 1100 50  0000 C CNN
+F 2 "Connector_RJ:RJ45_Amphenol_RJMG1BD3B8K1ANR" V 1650 1600 50  0001 C CNN
+F 3 "~" V 1650 1600 50  0001 C CNN
+	1    1650 1575
+	1    0    0    1   
 $EndComp
 $EndSCHEMATC

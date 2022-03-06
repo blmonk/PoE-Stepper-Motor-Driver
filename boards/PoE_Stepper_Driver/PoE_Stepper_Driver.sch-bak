@@ -32,17 +32,6 @@ VOUT+
 Text GLabel 7525 2850 0    50   Input ~ 0
 VOUT-
 $Comp
-L MCU_ST_STM32F4:STM32F407VETx U3
-U 1 1 6214C299
-P 4125 3900
-F 0 "U3" H 3350 6600 50  0000 C CNN
-F 1 "STM32F407VETx" H 3325 6700 50  0000 C CNN
-F 2 "Package_QFP:LQFP-100_14x14mm_P0.5mm" H 3425 1300 50  0001 R CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00037051.pdf" H 4125 3900 50  0001 C CNN
-	1    4125 3900
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR07
 U 1 1 6214E350
 P 4125 6750
@@ -247,12 +236,12 @@ Wire Wire Line
 $Comp
 L power:+3V3 #PWR013
 U 1 1 62181887
-P 8950 4025
-F 0 "#PWR013" H 8950 3875 50  0001 C CNN
-F 1 "+3V3" H 8965 4198 50  0000 C CNN
-F 2 "" H 8950 4025 50  0001 C CNN
-F 3 "" H 8950 4025 50  0001 C CNN
-	1    8950 4025
+P 9275 4000
+F 0 "#PWR013" H 9275 3850 50  0001 C CNN
+F 1 "+3V3" H 9290 4173 50  0000 C CNN
+F 2 "" H 9275 4000 50  0001 C CNN
+F 3 "" H 9275 4000 50  0001 C CNN
+	1    9275 4000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -281,8 +270,8 @@ $Comp
 L device:C_Small C10
 U 1 1 621AEC2B
 P 8950 4200
-F 0 "C10" H 9042 4246 50  0000 L CNN
-F 1 "0.1uF" H 9042 4155 50  0000 L CNN
+F 0 "C10" H 9025 4250 50  0000 L CNN
+F 1 "0.1uF" H 9025 4150 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8950 4200 50  0001 C CNN
 F 3 "~" H 8950 4200 50  0001 C CNN
 	1    8950 4200
@@ -290,29 +279,24 @@ F 3 "~" H 8950 4200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8550 4050 8950 4050
-Wire Wire Line
-	8950 4050 8950 4025
 Connection ~ 8550 4050
 Wire Wire Line
 	8950 4050 8950 4100
-Connection ~ 8950 4050
 Wire Wire Line
 	8550 4375 8950 4375
 Wire Wire Line
 	8950 4375 8950 4300
 Connection ~ 8550 4375
-Text GLabel 5025 2000 2    50   Input ~ 0
+Text GLabel 5025 3500 2    50   Input ~ 0
 SPI1_SCK
 Text GLabel 5025 1900 2    50   Input ~ 0
 SPI1_CS
 Text GLabel 5025 3700 2    50   Input ~ 0
 SPI1_MOSI
-Text GLabel 5025 2100 2    50   Input ~ 0
+Text GLabel 5025 3600 2    50   Input ~ 0
 SPI1_MISO
-Text GLabel 5050 3200 2    50   Input ~ 0
+Text GLabel 5025 3800 2    50   Input ~ 0
 CLK_429
-Wire Wire Line
-	5025 3200 5050 3200
 $Comp
 L device:Crystal_Small Y1
 U 1 1 622B5795
@@ -401,96 +385,80 @@ Wire Wire Line
 Connection ~ 2400 2850
 Wire Wire Line
 	2400 2850 2400 3000
-Text GLabel 5050 3300 2    50   Input ~ 0
+Text GLabel 5025 2600 2    50   Input ~ 0
 CLK_2660
-Wire Wire Line
-	5025 3300 5050 3300
-Text GLabel 5025 4200 2    50   Input ~ 0
+Text GLabel 5025 5900 2    50   Input ~ 0
 SPI2_SCK
-Text GLabel 5025 5200 2    50   Input ~ 0
+Text GLabel 5025 6100 2    50   Input ~ 0
 SPI2_MOSI
-Text GLabel 5025 4100 2    50   Input ~ 0
+Text GLabel 5025 3000 2    50   Input ~ 0
 SPI2_CS
 Wire Wire Line
-	3100 4900 3225 4900
-$Comp
-L power:+3V3 #PWR06
-U 1 1 6265F676
-P 2325 4800
-F 0 "#PWR06" H 2325 4650 50  0001 C CNN
-F 1 "+3V3" H 2340 4973 50  0000 C CNN
-F 2 "" H 2325 4800 50  0001 C CNN
-F 3 "" H 2325 4800 50  0001 C CNN
-	1    2325 4800
-	1    0    0    -1  
-$EndComp
+	3100 6100 3225 6100
 $Comp
 L device:R_Small R1
 U 1 1 6266D089
-P 2600 4875
-F 0 "R1" V 2404 4875 50  0000 C CNN
-F 1 "470" V 2495 4875 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2600 4875 50  0001 C CNN
-F 3 "~" H 2600 4875 50  0001 C CNN
-	1    2600 4875
-	0    1    1    0   
+P 2850 6075
+F 0 "R1" V 2675 6075 50  0000 C CNN
+F 1 "470" V 2775 6075 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2850 6075 50  0001 C CNN
+F 3 "~" H 2850 6075 50  0001 C CNN
+	1    2850 6075
+	0    -1   1    0   
 $EndComp
 $Comp
 L device:LED_Small D4
 U 1 1 62671C5F
-P 2850 4875
-F 0 "D4" H 2850 4670 50  0000 C CNN
-F 1 "LED" H 2850 4761 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2850 4875 50  0001 C CNN
-F 3 "~" V 2850 4875 50  0001 C CNN
-	1    2850 4875
-	-1   0    0    1   
+P 2600 6075
+F 0 "D4" H 2525 5925 50  0000 C CNN
+F 1 "Green" H 2500 6000 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2600 6075 50  0001 C CNN
+F 3 "~" V 2600 6075 50  0001 C CNN
+	1    2600 6075
+	1    0    0    1   
 $EndComp
 Wire Wire Line
-	2700 4875 2750 4875
+	2750 6075 2700 6075
 $Comp
 L device:R_Small R2
 U 1 1 62679D47
-P 2600 5050
-F 0 "R2" V 2675 5050 50  0000 C CNN
-F 1 "470" V 2750 5050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2600 5050 50  0001 C CNN
-F 3 "~" H 2600 5050 50  0001 C CNN
-	1    2600 5050
-	0    1    1    0   
+P 2850 6250
+F 0 "R2" V 2775 6250 50  0000 C CNN
+F 1 "470" V 2925 6250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2850 6250 50  0001 C CNN
+F 3 "~" H 2850 6250 50  0001 C CNN
+	1    2850 6250
+	0    -1   1    0   
 $EndComp
 $Comp
 L device:LED_Small D5
 U 1 1 62679D4D
-P 2850 5050
-F 0 "D5" H 2850 5175 50  0000 C CNN
-F 1 "LED" H 2850 5250 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2850 5050 50  0001 C CNN
-F 3 "~" V 2850 5050 50  0001 C CNN
-	1    2850 5050
-	-1   0    0    1   
+P 2600 6250
+F 0 "D5" H 2500 6200 50  0000 C CNN
+F 1 "Green" H 2450 6300 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2600 6250 50  0001 C CNN
+F 3 "~" V 2600 6250 50  0001 C CNN
+	1    2600 6250
+	1    0    0    1   
 $EndComp
 Wire Wire Line
-	2700 5050 2750 5050
+	2750 6250 2700 6250
 Wire Wire Line
-	2950 4875 3100 4875
+	2950 6075 3100 6075
 Wire Wire Line
-	3100 4875 3100 4900
+	3100 6075 3100 6100
 Wire Wire Line
-	2950 5050 3100 5050
+	2950 6250 3100 6250
 Wire Wire Line
-	3100 5050 3100 5000
+	3100 6250 3100 6200
 Wire Wire Line
-	3100 5000 3225 5000
+	3100 6200 3225 6200
 Wire Wire Line
-	2325 4800 2325 4875
+	2325 6250 2500 6250
 Wire Wire Line
-	2325 5050 2500 5050
+	2500 6075 2325 6075
 Wire Wire Line
-	2500 4875 2325 4875
-Connection ~ 2325 4875
-Wire Wire Line
-	2325 4875 2325 5050
+	2325 6075 2325 6250
 Text GLabel 3200 1500 0    50   Input ~ 0
 NRST
 Wire Wire Line
@@ -511,7 +479,7 @@ Text GLabel 5025 1700 2    50   Input ~ 0
 MDIO
 Text GLabel 5025 5000 2    50   Input ~ 0
 MDC
-Text GLabel 5025 5100 2    50   Input ~ 0
+Text GLabel 5025 6000 2    50   Input ~ 0
 SPI2_MISO
 Text Notes 2650 850  0    50   ~ 10
 MCU
@@ -712,26 +680,13 @@ NoConn ~ 3225 5500
 NoConn ~ 3225 5600
 NoConn ~ 3225 5900
 NoConn ~ 3225 6000
-NoConn ~ 3225 6100
-NoConn ~ 3225 6200
-NoConn ~ 3225 6300
-NoConn ~ 3225 6400
-NoConn ~ 5025 5900
-NoConn ~ 5025 6000
-NoConn ~ 5025 6100
 NoConn ~ 5025 6200
 NoConn ~ 5025 6300
-NoConn ~ 5025 6400
 NoConn ~ 5025 2300
 NoConn ~ 5025 2400
 NoConn ~ 5025 2500
-NoConn ~ 5025 2600
 NoConn ~ 5025 2700
-NoConn ~ 5025 3000
 NoConn ~ 5025 3400
-NoConn ~ 5025 3500
-NoConn ~ 5025 3600
-NoConn ~ 5025 3800
 NoConn ~ 5025 3900
 NoConn ~ 5025 4000
 NoConn ~ 5025 4600
@@ -823,7 +778,7 @@ U 1 1 625BA2D6
 P 1275 3400
 F 0 "R17" V 1325 3550 50  0000 C CNN
 F 1 "22" V 1200 3325 50  0000 C CNN
-F 2 "" H 1275 3400 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1275 3400 50  0001 C CNN
 F 3 "~" H 1275 3400 50  0001 C CNN
 	1    1275 3400
 	0    -1   -1   0   
@@ -862,7 +817,7 @@ U 1 1 625DA239
 P 1275 3300
 F 0 "R16" V 1325 3450 50  0000 C CNN
 F 1 "22" V 1350 3250 50  0000 C CNN
-F 2 "" H 1275 3300 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1275 3300 50  0001 C CNN
 F 3 "~" H 1275 3300 50  0001 C CNN
 	1    1275 3300
 	0    -1   -1   0   
@@ -962,4 +917,93 @@ Wire Wire Line
 Connection ~ 1475 2175
 Wire Wire Line
 	1475 2175 1475 2200
+$Comp
+L MCU_ST_STM32F4:STM32F407VETx U3
+U 1 1 6214C299
+P 4125 3900
+F 0 "U3" H 3350 6600 50  0000 C CNN
+F 1 "STM32F407VETx" H 3325 6700 50  0000 C CNN
+F 2 "Package_QFP:LQFP-100_14x14mm_P0.5mm" H 3425 1300 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00037051.pdf" H 4125 3900 50  0001 C CNN
+	1    4125 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R_Small R38
+U 1 1 622A3AE3
+P 2850 6475
+F 0 "R38" V 2775 6475 50  0000 C CNN
+F 1 "470" V 2925 6475 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2850 6475 50  0001 C CNN
+F 3 "~" H 2850 6475 50  0001 C CNN
+	1    2850 6475
+	0    -1   1    0   
+$EndComp
+$Comp
+L device:LED_Small D6
+U 1 1 622A3AE9
+P 2600 6475
+F 0 "D6" H 2500 6425 50  0000 C CNN
+F 1 "Green" H 2450 6525 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2600 6475 50  0001 C CNN
+F 3 "~" V 2600 6475 50  0001 C CNN
+	1    2600 6475
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2750 6475 2700 6475
+$Comp
+L device:LED_Small D7
+U 1 1 622AA99B
+P 9275 4375
+F 0 "D7" V 9300 4525 50  0000 C CNN
+F 1 "Green" V 9225 4550 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9275 4375 50  0001 C CNN
+F 3 "~" V 9275 4375 50  0001 C CNN
+	1    9275 4375
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	2325 6250 2325 6475
+Wire Wire Line
+	2325 6475 2500 6475
+Connection ~ 2325 6250
+Wire Wire Line
+	2950 6475 3150 6475
+Wire Wire Line
+	3150 6475 3150 6300
+Wire Wire Line
+	3150 6300 3225 6300
+NoConn ~ 3225 4900
+NoConn ~ 3225 5000
+NoConn ~ 3225 6400
+$Comp
+L device:R_Small R39
+U 1 1 622AA995
+P 9275 4175
+F 0 "R39" H 9400 4150 50  0000 C CNN
+F 1 "470" H 9400 4225 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9275 4175 50  0001 C CNN
+F 3 "~" H 9275 4175 50  0001 C CNN
+	1    9275 4175
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	8950 4050 9275 4050
+Wire Wire Line
+	9275 4050 9275 4000
+Connection ~ 8950 4050
+Wire Wire Line
+	9275 4050 9275 4075
+Connection ~ 9275 4050
+Wire Wire Line
+	8950 4375 8950 4500
+Wire Wire Line
+	8950 4500 9275 4500
+Wire Wire Line
+	9275 4500 9275 4475
+Connection ~ 8950 4375
+NoConn ~ 5025 3200
+NoConn ~ 5025 3300
+NoConn ~ 5025 6400
 $EndSCHEMATC
