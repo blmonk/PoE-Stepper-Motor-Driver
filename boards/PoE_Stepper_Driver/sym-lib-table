@@ -1,3 +1,6 @@
 (sym_lib_table
   (lib (name ECE445)(type Legacy)(uri ${KIPRJMOD}/ECE445.lib)(options "")(descr ""))
+  (lib (name TMC429-I)(type Legacy)(uri ${KIPRJMOD}/TMC429-I.lib)(options "")(descr ""))
+  (lib (name TMC2660C-PA)(type Legacy)(uri ${KIPRJMOD}/TMC2660C-PA.lib)(options "")(descr ""))
+  (lib (name TMC2660_2)(type Legacy)(uri ${KIPRJMOD}/TMC2660_2.lib)(options "")(descr ""))
 )
