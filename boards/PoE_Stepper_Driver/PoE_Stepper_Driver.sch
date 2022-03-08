@@ -665,8 +665,6 @@ NoConn ~ 3225 6000
 NoConn ~ 5025 6200
 NoConn ~ 5025 6300
 NoConn ~ 5025 2300
-NoConn ~ 5025 2400
-NoConn ~ 5025 2500
 NoConn ~ 5025 2700
 NoConn ~ 5025 3400
 NoConn ~ 5025 3900
@@ -764,18 +762,14 @@ $EndComp
 $Comp
 L power:GND #PWR056
 U 1 1 625BB5F0
-P 3000 1750
-F 0 "#PWR056" H 3000 1500 50  0001 C CNN
-F 1 "GND" H 3005 1577 50  0000 C CNN
-F 2 "" H 3000 1750 50  0001 C CNN
-F 3 "" H 3000 1750 50  0001 C CNN
-	1    3000 1750
+P 2700 1725
+F 0 "#PWR056" H 2700 1475 50  0001 C CNN
+F 1 "GND" H 2705 1552 50  0000 C CNN
+F 2 "" H 2700 1725 50  0001 C CNN
+F 3 "" H 2700 1725 50  0001 C CNN
+	1    2700 1725
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3225 1700 3000 1700
-Wire Wire Line
-	3000 1700 3000 1750
 $Comp
 L Connector:Conn_01x04_Male J4
 U 1 1 625C4DFF
@@ -1178,4 +1172,56 @@ $EndComp
 Wire Wire Line
 	2125 3950 2125 4050
 Connection ~ 2125 3950
+$Comp
+L device:R_Small R40
+U 1 1 62AB9418
+P 2850 1700
+F 0 "R40" V 2750 1650 50  0000 L CNN
+F 1 "10k" V 2925 1625 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2850 1700 50  0001 C CNN
+F 3 "~" H 2850 1700 50  0001 C CNN
+	1    2850 1700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2750 1700 2700 1700
+Wire Wire Line
+	2700 1700 2700 1725
+$Comp
+L Connector:TestPoint TP1
+U 1 1 62AE2994
+P 3050 1750
+F 0 "TP1" H 2900 1775 50  0000 L CNN
+F 1 "BOOT0" H 2775 1750 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 3250 1750 50  0001 C CNN
+F 3 "~" H 3250 1750 50  0001 C CNN
+	1    3050 1750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2950 1700 3050 1700
+Wire Wire Line
+	3050 1750 3050 1700
+Connection ~ 3050 1700
+Wire Wire Line
+	3050 1700 3225 1700
+Text Label 5025 2400 0    50   ~ 0
+UART_TX
+Text Label 5025 2500 0    50   ~ 0
+UART_RX
+$Comp
+L Connector:Conn_01x02_Male J9
+U 1 1 62B51628
+P 9350 5600
+F 0 "J9" H 9458 5781 50  0000 C CNN
+F 1 "UART" H 9458 5690 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9350 5600 50  0001 C CNN
+F 3 "~" H 9350 5600 50  0001 C CNN
+	1    9350 5600
+	1    0    0    -1  
+$EndComp
+Text Label 9550 5600 0    50   ~ 0
+UART_TX
+Text Label 9550 5700 0    50   ~ 0
+UART_RX
 $EndSCHEMATC
