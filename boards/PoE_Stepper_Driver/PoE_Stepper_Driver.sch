@@ -665,8 +665,6 @@ NoConn ~ 3225 6000
 NoConn ~ 5025 6200
 NoConn ~ 5025 6300
 NoConn ~ 5025 2300
-NoConn ~ 5025 2400
-NoConn ~ 5025 2500
 NoConn ~ 5025 2700
 NoConn ~ 5025 3400
 NoConn ~ 5025 3900
@@ -1207,4 +1205,23 @@ Wire Wire Line
 Connection ~ 3050 1700
 Wire Wire Line
 	3050 1700 3225 1700
+Text Label 5025 2400 0    50   ~ 0
+UART_TX
+Text Label 5025 2500 0    50   ~ 0
+UART_RX
+$Comp
+L Connector:Conn_01x02_Male J9
+U 1 1 62B51628
+P 9350 5600
+F 0 "J9" H 9458 5781 50  0000 C CNN
+F 1 "UART" H 9458 5690 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9350 5600 50  0001 C CNN
+F 3 "~" H 9350 5600 50  0001 C CNN
+	1    9350 5600
+	1    0    0    -1  
+$EndComp
+Text Label 9550 5600 0    50   ~ 0
+UART_TX
+Text Label 9550 5700 0    50   ~ 0
+UART_RX
 $EndSCHEMATC
