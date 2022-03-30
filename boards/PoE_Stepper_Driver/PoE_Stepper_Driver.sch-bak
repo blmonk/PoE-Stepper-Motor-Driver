@@ -1210,12 +1210,12 @@ UART_TX
 Text Label 5025 2500 0    50   ~ 0
 UART_RX
 $Comp
-L Connector:Conn_01x02_Male J?
+L Connector:Conn_01x02_Male J9
 U 1 1 62B51628
 P 9350 5600
-F 0 "J?" H 9458 5781 50  0000 C CNN
+F 0 "J9" H 9458 5781 50  0000 C CNN
 F 1 "UART" H 9458 5690 50  0000 C CNN
-F 2 "" H 9350 5600 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9350 5600 50  0001 C CNN
 F 3 "~" H 9350 5600 50  0001 C CNN
 	1    9350 5600
 	1    0    0    -1  
