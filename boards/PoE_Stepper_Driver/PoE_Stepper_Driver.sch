@@ -384,11 +384,11 @@ Wire Wire Line
 Text GLabel 5025 2600 2    50   Input ~ 0
 CLK_2660
 Text GLabel 5025 5900 2    50   Input ~ 0
-SPI2_SCK
+SPI3_SCK
 Text GLabel 5025 6100 2    50   Input ~ 0
-SPI2_MOSI
+SPI3_MOSI
 Text GLabel 5025 3000 2    50   Input ~ 0
-SPI2_CS
+SPI3_CS
 $Comp
 L device:R_Small R1
 U 1 1 6266D089
@@ -466,7 +466,7 @@ MDIO
 Text GLabel 5025 5000 2    50   Input ~ 0
 MDC
 Text GLabel 5025 6000 2    50   Input ~ 0
-SPI2_MISO
+SPI3_MISO
 Text Notes 2650 850  0    50   ~ 10
 MCU
 $Comp
@@ -1105,13 +1105,13 @@ SPI1_MISO
 Text GLabel 8400 4525 2    50   Input ~ 0
 SPI1_CS
 Text GLabel 8400 5025 2    50   Input ~ 0
-SPI2_SCK
+SPI3_SCK
 Text GLabel 8400 5225 2    50   Input ~ 0
-SPI2_MOSI
+SPI3_MOSI
 Text GLabel 8400 5125 2    50   Input ~ 0
-SPI2_MISO
+SPI3_MISO
 Text GLabel 8400 4925 2    50   Input ~ 0
-SPI2_CS
+SPI3_CS
 Text GLabel 8400 5325 2    50   Input ~ 0
 CLK_429
 $Comp

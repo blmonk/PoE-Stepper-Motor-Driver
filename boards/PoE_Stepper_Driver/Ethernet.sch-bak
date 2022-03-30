@@ -2046,17 +2046,6 @@ F 3 "" H 6055 7015 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L ECE445:NMOS_POE Q10
-U 1 1 62ADDF86
-P 6125 7200
-F 0 "Q10" H 6244 7234 50  0000 L CNN
-F 1 "NMOS_POE" H 6244 7143 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:LFPAK33" H 6055 7540 50  0001 C CNN
-F 3 "" H 6055 7540 50  0001 C CNN
-	1    6125 7200
-	-1   0    0    -1  
-$EndComp
-$Comp
 L ECE445:NMOS_POE Q4
 U 1 1 62B00083
 P 5250 7200
@@ -2092,7 +2081,6 @@ $EndComp
 Connection ~ 3500 7000
 Connection ~ 4375 7000
 Connection ~ 5250 7000
-Connection ~ 6125 7000
 $Comp
 L ECE445:NMOS_POE Q1
 U 1 1 6214A191
@@ -2117,138 +2105,16 @@ F 3 "~" V 1650 1600 50  0001 C CNN
 	1    1650 1575
 	1    0    0    1   
 $EndComp
+Connection ~ 6125 7000
 $Comp
-L Connector:TestPoint TP?
-U 1 1 62BC6E9F
-P 6125 6450
-F 0 "TP?" V 6125 6638 50  0000 L CNN
-F 1 "TestPoint" V 6170 6638 50  0001 L CNN
-F 2 "" H 6325 6450 50  0001 C CNN
-F 3 "~" H 6325 6450 50  0001 C CNN
-	1    6125 6450
-	0    1    1    0   
-$EndComp
-Connection ~ 6125 6450
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62BE8E6A
-P 6125 7550
-F 0 "TP?" V 6125 7738 50  0000 L CNN
-F 1 "TestPoint" V 6170 7738 50  0001 L CNN
-F 2 "" H 6325 7550 50  0001 C CNN
-F 3 "~" H 6325 7550 50  0001 C CNN
-	1    6125 7550
-	0    1    1    0   
-$EndComp
-Connection ~ 6125 7550
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62C0B76D
-P 5550 7200
-F 0 "TP?" V 5550 7388 50  0000 L CNN
-F 1 "TestPoint" V 5595 7388 50  0001 L CNN
-F 2 "" H 5750 7200 50  0001 C CNN
-F 3 "~" H 5750 7200 50  0001 C CNN
-	1    5550 7200
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62C2CFE7
-P 5550 6675
-F 0 "TP?" V 5550 6863 50  0000 L CNN
-F 1 "TestPoint" V 5595 6863 50  0001 L CNN
-F 2 "" H 5750 6675 50  0001 C CNN
-F 3 "~" H 5750 6675 50  0001 C CNN
-	1    5550 6675
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62C4F026
-P 4675 6675
-F 0 "TP?" V 4675 6863 50  0000 L CNN
-F 1 "TestPoint" V 4720 6863 50  0001 L CNN
-F 2 "" H 4875 6675 50  0001 C CNN
-F 3 "~" H 4875 6675 50  0001 C CNN
-	1    4675 6675
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62C7082A
-P 4675 7200
-F 0 "TP?" V 4675 7388 50  0000 L CNN
-F 1 "TestPoint" V 4720 7388 50  0001 L CNN
-F 2 "" H 4875 7200 50  0001 C CNN
-F 3 "~" H 4875 7200 50  0001 C CNN
-	1    4675 7200
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62C92149
-P 3800 7200
-F 0 "TP?" V 3800 7388 50  0000 L CNN
-F 1 "TestPoint" V 3845 7388 50  0001 L CNN
-F 2 "" H 4000 7200 50  0001 C CNN
-F 3 "~" H 4000 7200 50  0001 C CNN
-	1    3800 7200
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62CB3839
-P 3800 6675
-F 0 "TP?" V 3800 6863 50  0000 L CNN
-F 1 "TestPoint" V 3845 6863 50  0001 L CNN
-F 2 "" H 4000 6675 50  0001 C CNN
-F 3 "~" H 4000 6675 50  0001 C CNN
-	1    3800 6675
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62CD528D
-P 3500 7000
-F 0 "TP?" V 3500 7188 50  0000 L CNN
-F 1 "TestPoint" V 3545 7188 50  0001 L CNN
-F 2 "" H 3700 7000 50  0001 C CNN
-F 3 "~" H 3700 7000 50  0001 C CNN
-	1    3500 7000
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62CF7148
-P 4375 7000
-F 0 "TP?" V 4375 7188 50  0000 L CNN
-F 1 "TestPoint" V 4420 7188 50  0001 L CNN
-F 2 "" H 4575 7000 50  0001 C CNN
-F 3 "~" H 4575 7000 50  0001 C CNN
-	1    4375 7000
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62D18C97
-P 5250 7000
-F 0 "TP?" V 5250 7188 50  0000 L CNN
-F 1 "TestPoint" V 5295 7188 50  0001 L CNN
-F 2 "" H 5450 7000 50  0001 C CNN
-F 3 "~" H 5450 7000 50  0001 C CNN
-	1    5250 7000
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 62D3AAF3
-P 6125 7000
-F 0 "TP?" V 6125 7188 50  0000 L CNN
-F 1 "TestPoint" V 6170 7188 50  0001 L CNN
-F 2 "" H 6325 7000 50  0001 C CNN
-F 3 "~" H 6325 7000 50  0001 C CNN
-	1    6125 7000
-	0    1    1    0   
+L ECE445:NMOS_POE Q10
+U 1 1 62ADDF86
+P 6125 7200
+F 0 "Q10" H 6244 7234 50  0000 L CNN
+F 1 "NMOS_POE" H 6244 7143 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:LFPAK33" H 6055 7540 50  0001 C CNN
+F 3 "" H 6055 7540 50  0001 C CNN
+	1    6125 7200
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC
