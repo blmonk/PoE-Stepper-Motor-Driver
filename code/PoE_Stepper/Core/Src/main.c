@@ -57,7 +57,9 @@ static void MX_SPI3_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
-
+uint8_t SPI_2660_Init(void);
+uint8_t SPI_429_Init(void);
+void const_vel_test_429 (void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -99,11 +101,23 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
-  TIM1->CCR4 = 4; //set duty cycle of tim1 ch4
-  TIM4->CCR1 = 2; //set duty cycle of tim4 ch1
+  //  TIM1->CCR4 = 4; //set duty cycle of tim1 ch4
+     //set duty cycle of tim4 ch1
 
-  HAL_TIM_PWM_Start($htim1, TIM_CHANNEL_4); //start tim1 ch4 pwm
-  HAL_TIM_PWM_Start($htim4, TIM_CHANNEL_1); //start tim4 ch1 pwm
+    //HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4); //start tim1 ch4 pwm
+
+  //  HAL_TIM_Base_Start(&htim4);
+  TIM4->CCR1 = 1;
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); //start tim4 ch1 pwm
+
+
+  uint8_t spi_buf[3];
+  spi_buf[0] = 0x00;
+  spi_buf[1] = 0x00;
+  spi_buf[2] = 0x08;
+
+  SPI_2660_Init();
+  SPI_429_Init();
 
   /* USER CODE END 2 */
 
@@ -115,7 +129,14 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_4);
-	HAL_Delay(500);
+	HAL_Delay(5);
+	const_vel_test_429();
+
+//	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
+//	HAL_SPI_Transmit(&hspi3,(uint8_t *)spi_buf, 3, 100);
+//	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
+
+
 
   }
   /* USER CODE END 3 */
@@ -184,10 +205,10 @@ static void MX_SPI1_Init(void)
   hspi1.Init.Mode = SPI_MODE_MASTER;
   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
   hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
+  hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -222,10 +243,10 @@ static void MX_SPI3_Init(void)
   hspi3.Init.Mode = SPI_MODE_MASTER;
   hspi3.Init.Direction = SPI_DIRECTION_2LINES;
   hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi3.Init.CLKPolarity = SPI_POLARITY_HIGH;
+  hspi3.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi3.Init.NSS = SPI_NSS_SOFT;
-  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
   hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -254,8 +275,6 @@ static void MX_TIM1_Init(void)
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
-  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
   /* USER CODE BEGIN TIM1_Init 1 */
 
@@ -276,41 +295,15 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
-  {
-    Error_Handler();
-  }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
-  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
-  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
-  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
-  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
-  sBreakDeadTimeConfig.DeadTime = 0;
-  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
-  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
-  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
-  if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM1_Init 2 */
 
   /* USER CODE END TIM1_Init 2 */
-  HAL_TIM_MspPostInit(&htim1);
 
 }
 
@@ -334,9 +327,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 4-1;
+  htim4.Init.Period = 2-1;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
@@ -413,6 +406,119 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+
+HAL_StatusTypeDef SPI_2660_Transmit(uint8_t * dataBuffer){
+    HAL_StatusTypeDef err;
+    uint8_t spi_buf[3];
+
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
+    err = HAL_SPI_TransmitReceive(&hspi3, (uint8_t *)dataBuffer, (uint8_t *)spi_buf,  3, 100);
+    while(HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+//    HAL_SPI_Receive(&hspi3, (uint8_t *)spi_buf, 5, 100);
+//    while(HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
+
+    return err;
+}
+
+uint8_t SPI_2660_Init(void){
+    uint8_t wData[3];
+    wData[0] = 0x09;            // SPI = $94557  Constant toff mode
+    wData[1] = 0x01;
+    wData[2] = 0xB4;
+    SPI_2660_Transmit(wData);
+
+
+    wData[0] = 0x0D;            // SPI = $D001F  Current setting: $d001F (max. current) (D000A = 1/3 current)
+    wData[1] = 0x00;
+    wData[2] = 0x0A;
+    SPI_2660_Transmit(wData);
+
+    wData[0] = 0x0E;            // SPI = $E0090  low driver strength, StallGuard2 read, SDOFF=1
+    wData[1] = 0x00;            //  1110 0000 0000 1001 0000
+    wData[2] = 0x10;
+    SPI_2660_Transmit(wData);
+
+    wData[0] = 0x00;            // SPI = $00000  256 microstep setting
+    wData[1] = 0x00;
+    wData[2] = 0x00;
+    SPI_2660_Transmit(wData);
+
+
+
+    return 0;
+
+}
+
+
+HAL_StatusTypeDef SPI_429_Transmit(uint8_t * dataBuffer){
+    HAL_StatusTypeDef err;
+    uint8_t spi_buf[4];
+
+
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+    err = HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)dataBuffer, (uint8_t *)spi_buf,  4, 100);
+    while(HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+//    HAL_SPI_Receive(&hspi3, (uint8_t *)spi_buf, 5, 100);
+//    while(HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+
+    return err;
+}
+
+uint8_t SPI_429_Init(void){
+    uint8_t wData[4];
+    wData[0] = 0x04;            // SPI = $04000007
+    wData[1] = 0x00;
+    wData[2] = 0x00;
+    wData[3] = 0x07;
+    SPI_429_Transmit(wData);
+
+
+    wData[0] = 0x06;            // SPI = $060007FF
+    wData[1] = 0x00;
+    wData[2] = 0x07;
+    wData[3] = 0xFF;
+    SPI_429_Transmit(wData);
+
+    wData[0] = 0x14;            // SPI = $18003300
+    wData[1] = 0x00;
+    wData[2] = 0x33;
+    wData[3] = 0x02;
+    SPI_429_Transmit(wData);
+
+    wData[0] = 0x0C;            // SPI = $0C00000A
+    wData[1] = 0x00;
+    wData[2] = 0x00;
+    wData[3] = 0x0A;
+    SPI_429_Transmit(wData);
+
+    wData[0] = 0x12;            // SPI = $1200E808
+    wData[1] = 0x00;
+    wData[2] = 0xE8;
+    wData[3] = 0x08;
+    SPI_429_Transmit(wData);
+
+    wData[0] = 0x0A;            // SPI = $0A000300
+    wData[1] = 0x00;
+    wData[2] = 0x03;
+    wData[3] = 0x00;
+    SPI_429_Transmit(wData);
+
+
+    return 0;
+
+}
+
+void const_vel_test_429 (void){
+	uint8_t wData[4];
+
+    wData[0] = 0x08;            // SPI = 0000 1000 0000 0000 0000 0000 0001 0000
+    wData[1] = 0x00;
+    wData[2] = 0x00;
+    wData[3] = 0x00;
+    SPI_429_Transmit(wData);
+}
 /* USER CODE END 4 */
 
 /**
