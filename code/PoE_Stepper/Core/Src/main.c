@@ -60,6 +60,7 @@ static void MX_TIM4_Init(void);
 uint8_t SPI_2660_Init(void);
 uint8_t SPI_429_Init(void);
 void const_vel_test_429 (void);
+void set_motor_pos(uint32_t position);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -129,8 +130,11 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_4);
-	HAL_Delay(5);
-	const_vel_test_429();
+
+//	const_vel_test_429();
+
+	set_motor_pos(1);
+	HAL_Delay(5000);
 
 //	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
 //	HAL_SPI_Transmit(&hspi3,(uint8_t *)spi_buf, 3, 100);
@@ -431,7 +435,7 @@ uint8_t SPI_2660_Init(void){
 
     wData[0] = 0x0D;            // SPI = $D001F  Current setting: $d001F (max. current) (D000A = 1/3 current)
     wData[1] = 0x00;
-    wData[2] = 0x0A;
+    wData[2] = 0x08;
     SPI_2660_Transmit(wData);
 
     wData[0] = 0x0E;            // SPI = $E0090  low driver strength, StallGuard2 read, SDOFF=1
@@ -439,12 +443,10 @@ uint8_t SPI_2660_Init(void){
     wData[2] = 0x10;
     SPI_2660_Transmit(wData);
 
-    wData[0] = 0x00;            // SPI = $00000  256 microstep setting
+    wData[0] = 0x00;            // SPI = $00000  256 microstep setting, $00002 = 64 microsteps
     wData[1] = 0x00;
-    wData[2] = 0x00;
+    wData[2] = 0x02;
     SPI_2660_Transmit(wData);
-
-
 
     return 0;
 
@@ -468,12 +470,11 @@ HAL_StatusTypeDef SPI_429_Transmit(uint8_t * dataBuffer){
 
 uint8_t SPI_429_Init(void){
     uint8_t wData[4];
-    wData[0] = 0x04;            // SPI = $04000007
+    wData[0] = 0x04;            // SPI = $04000007,
     wData[1] = 0x00;
     wData[2] = 0x00;
     wData[3] = 0x07;
     SPI_429_Transmit(wData);
-
 
     wData[0] = 0x06;            // SPI = $060007FF
     wData[1] = 0x00;
@@ -481,11 +482,17 @@ uint8_t SPI_429_Init(void){
     wData[3] = 0xFF;
     SPI_429_Transmit(wData);
 
-    wData[0] = 0x14;            // SPI = $18003300
+    wData[0] = 0x18;            // SPI = $18003307
     wData[1] = 0x00;
-    wData[2] = 0x33;
-    wData[3] = 0x02;
+    wData[2] = 0x33;			// set PULSE_DIV, RAMP_DIV
+    wData[3] = 0x07;			// set USRS (resolution) = 111 (64 microstep resolution)
     SPI_429_Transmit(wData);
+
+    wData[0] = 0x14;            // SPI = $18003300
+	wData[1] = 0x00;
+	wData[2] = 0x03;			// REF_CONF = (ref_RnL, soft_stop, disable_stop_r, disable_stop_l) = 0b0011 = 0x3
+	wData[3] = 0x00;			// RAMP_MODE = 0 (ramp mode), 1 (soft mode), 2 (velocity mode)
+	SPI_429_Transmit(wData);
 
     wData[0] = 0x0C;            // SPI = $0C00000A
     wData[1] = 0x00;
@@ -516,8 +523,30 @@ void const_vel_test_429 (void){
     wData[0] = 0x08;            // SPI = 0000 1000 0000 0000 0000 0000 0001 0000
     wData[1] = 0x00;
     wData[2] = 0x00;
-    wData[3] = 0x00;
+    wData[3] = 0x10;
     SPI_429_Transmit(wData);
+}
+
+void set_motor_pos(uint32_t position){
+
+	// set motor position: 0 00 0000 0 xxxxxxxx xxxxxxxx xxxxxxxx (24-bit position)
+	// set ramp mode: 010 1010 0 (0x54) xxxxxxx(lp) xxxxaaaa(ref_conf) xxxxxxaa(ramp mode)
+
+	uint8_t wData[4];
+	wData[0] = 0x00;
+	wData[1] = 0x00;
+	wData[2] = 0x32;
+	wData[3] = 0x00;
+	SPI_429_Transmit(wData);
+
+	HAL_Delay(5000);
+
+	wData[0] = 0x00;
+	wData[1] = 0x00;
+	wData[2] = 0x00;
+	wData[3] = 0x00;
+	SPI_429_Transmit(wData);
+
 }
 /* USER CODE END 4 */
 
