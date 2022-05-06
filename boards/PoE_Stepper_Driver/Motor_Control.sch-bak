@@ -406,13 +406,13 @@ $EndComp
 Text GLabel 7475 3350 0    50   Input ~ 0
 CLK_2660
 Text GLabel 7500 4350 0    50   Input ~ 0
-SPI2_SCK
+SPI3_SCK
 Text GLabel 7500 4550 0    50   Input ~ 0
-SPI2_MISO
+SPI3_MISO
 Text GLabel 7500 4450 0    50   Input ~ 0
-SPI2_MOSI
+SPI3_MOSI
 Text GLabel 7500 4250 0    50   Input ~ 0
-SPI2_CS
+SPI3_CS
 $Comp
 L device:R_Small R27
 U 1 1 6238B615

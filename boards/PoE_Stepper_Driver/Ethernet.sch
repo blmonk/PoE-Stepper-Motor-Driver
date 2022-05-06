@@ -502,10 +502,6 @@ Wire Wire Line
 Wire Wire Line
 	4750 2200 4750 2550
 Wire Wire Line
-	4625 1800 5000 1800
-Wire Wire Line
-	5000 1800 5000 2550
-Wire Wire Line
 	4625 1400 5250 1400
 Wire Wire Line
 	5250 1400 5250 2550
@@ -525,8 +521,6 @@ Text Label 4675 900  0    50   ~ 0
 TX+
 Wire Wire Line
 	4625 1300 4675 1300
-Wire Wire Line
-	4625 1900 4650 1900
 Text Label 4675 1100 0    50   ~ 0
 TX-
 Text Label 900  4150 2    50   ~ 0
@@ -1795,97 +1789,6 @@ Connection ~ 10350 4625
 Wire Wire Line
 	10350 4625 10400 4625
 $Comp
-L power:GND #PWR019
-U 1 1 64683BD9
-P 4650 2325
-F 0 "#PWR019" H 4650 2075 50  0001 C CNN
-F 1 "GND" H 4625 2175 50  0000 C CNN
-F 2 "" H 4650 2325 50  0001 C CNN
-F 3 "" H 4650 2325 50  0001 C CNN
-	1    4650 2325
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 2300 4650 2325
-Wire Wire Line
-	4625 2300 4650 2300
-Wire Wire Line
-	4625 2100 4650 2100
-Wire Wire Line
-	4650 2100 4650 2300
-Connection ~ 4650 2300
-$Comp
-L device:C_Small C?
-U 1 1 6476D400
-P 4775 1900
-AR Path="/6476D400" Ref="C?"  Part="1" 
-AR Path="/620ECB3C/6476D400" Ref="C13"  Part="1" 
-F 0 "C13" V 4725 1950 50  0000 L CNN
-F 1 "0.1uF" V 4825 1925 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4775 1900 50  0001 C CNN
-F 3 "~" H 4775 1900 50  0001 C CNN
-	1    4775 1900
-	0    1    1    0   
-$EndComp
-$Comp
-L device:C_Small C?
-U 1 1 647B1464
-P 4775 1700
-AR Path="/647B1464" Ref="C?"  Part="1" 
-AR Path="/620ECB3C/647B1464" Ref="C11"  Part="1" 
-F 0 "C11" V 4725 1725 50  0000 L CNN
-F 1 "0.1uF" V 4825 1725 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4775 1700 50  0001 C CNN
-F 3 "~" H 4775 1700 50  0001 C CNN
-	1    4775 1700
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4625 1700 4650 1700
-$Comp
-L power:+3V3 #PWR018
-U 1 1 647F5CD1
-P 4650 1650
-F 0 "#PWR018" H 4650 1500 50  0001 C CNN
-F 1 "+3V3" H 4775 1750 50  0000 C CNN
-F 2 "" H 4650 1650 50  0001 C CNN
-F 3 "" H 4650 1650 50  0001 C CNN
-	1    4650 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 1650 4650 1700
-Connection ~ 4650 1700
-Wire Wire Line
-	4650 1700 4675 1700
-Wire Wire Line
-	4650 1700 4650 1900
-Connection ~ 4650 1900
-Wire Wire Line
-	4650 1900 4675 1900
-$Comp
-L power:GND #PWR020
-U 1 1 6488040E
-P 5100 1950
-F 0 "#PWR020" H 5100 1700 50  0001 C CNN
-F 1 "GND" H 5100 1800 50  0000 C CNN
-F 2 "" H 5100 1950 50  0001 C CNN
-F 3 "" H 5100 1950 50  0001 C CNN
-	1    5100 1950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5100 1900 5100 1950
-Wire Wire Line
-	4875 1900 5100 1900
-Wire Wire Line
-	4875 1700 5100 1700
-Wire Wire Line
-	5100 1700 5100 1900
-Connection ~ 5100 1900
-Text Notes 8575 2575 0    50   ~ 10
-PHY
-$Comp
 L device:C_Small C?
 U 1 1 64933F4C
 P 9750 2150
@@ -2117,4 +2020,103 @@ F 3 "" H 6055 7540 50  0001 C CNN
 	1    6125 7200
 	-1   0    0    -1  
 $EndComp
+Text Notes 3900 3625 0    50   ~ 0
+NOTE: \nIn PoE+ power is on data pairs (1+2, 3+6)\nIn PoE++, power is on spair pins (4+5, 7+8)
+Wire Wire Line
+	4625 2100 4650 2100
+Wire Wire Line
+	4625 2300 4650 2300
+Wire Wire Line
+	4650 2300 4650 2325
+$Comp
+L power:GND #PWR019
+U 1 1 64683BD9
+P 4650 2325
+F 0 "#PWR019" H 4650 2075 50  0001 C CNN
+F 1 "GND" H 4625 2175 50  0000 C CNN
+F 2 "" H 4650 2325 50  0001 C CNN
+F 3 "" H 4650 2325 50  0001 C CNN
+	1    4650 2325
+	1    0    0    -1  
+$EndComp
+Connection ~ 4650 2300
+Wire Wire Line
+	4650 2100 4650 2300
+$Comp
+L device:C_Small C?
+U 1 1 6476D400
+P 4775 1900
+AR Path="/6476D400" Ref="C?"  Part="1" 
+AR Path="/620ECB3C/6476D400" Ref="C13"  Part="1" 
+F 0 "C13" V 4725 1950 50  0000 L CNN
+F 1 "0.1uF" V 4825 1925 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4775 1900 50  0001 C CNN
+F 3 "~" H 4775 1900 50  0001 C CNN
+	1    4775 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4875 1900 5100 1900
+Wire Wire Line
+	5100 1900 5100 1950
+$Comp
+L power:GND #PWR020
+U 1 1 6488040E
+P 5100 1950
+F 0 "#PWR020" H 5100 1700 50  0001 C CNN
+F 1 "GND" H 5100 1800 50  0000 C CNN
+F 2 "" H 5100 1950 50  0001 C CNN
+F 3 "" H 5100 1950 50  0001 C CNN
+	1    5100 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 1800 5000 2550
+Wire Wire Line
+	4625 1800 5000 1800
+Connection ~ 5100 1900
+Wire Wire Line
+	5100 1700 5100 1900
+Wire Wire Line
+	4875 1700 5100 1700
+$Comp
+L device:C_Small C?
+U 1 1 647B1464
+P 4775 1700
+AR Path="/647B1464" Ref="C?"  Part="1" 
+AR Path="/620ECB3C/647B1464" Ref="C11"  Part="1" 
+F 0 "C11" V 4725 1725 50  0000 L CNN
+F 1 "0.1uF" V 4825 1725 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4775 1700 50  0001 C CNN
+F 3 "~" H 4775 1700 50  0001 C CNN
+	1    4775 1700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4650 1700 4675 1700
+Wire Wire Line
+	4625 1700 4650 1700
+Connection ~ 4650 1700
+Wire Wire Line
+	4650 1650 4650 1700
+Wire Wire Line
+	4650 1900 4675 1900
+Wire Wire Line
+	4625 1900 4650 1900
+Connection ~ 4650 1900
+Wire Wire Line
+	4650 1700 4650 1900
+$Comp
+L power:+3V3 #PWR018
+U 1 1 647F5CD1
+P 4650 1650
+F 0 "#PWR018" H 4650 1500 50  0001 C CNN
+F 1 "+3V3" H 4775 1750 50  0000 C CNN
+F 2 "" H 4650 1650 50  0001 C CNN
+F 3 "" H 4650 1650 50  0001 C CNN
+	1    4650 1650
+	1    0    0    -1  
+$EndComp
+Text Notes 8525 2725 0    50   ~ 10
+PHY
 $EndSCHEMATC

@@ -2117,4 +2117,6 @@ F 3 "" H 6055 7540 50  0001 C CNN
 	1    6125 7200
 	-1   0    0    -1  
 $EndComp
+Text Notes 3900 3625 0    50   ~ 0
+NOTE: \nIn PoE+ power is on data pairs (1+2, 3+6)\nIn PoE++, power is on spair pins (4+5, 7+8)
 $EndSCHEMATC
